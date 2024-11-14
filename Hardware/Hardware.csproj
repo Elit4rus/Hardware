@@ -67,6 +67,9 @@
     <Compile Include="AppData\AuthorizationHelper.cs" />
     <Compile Include="AppData\BlockSystemHelper.cs" />
     <Compile Include="AppData\FrameHelper.cs" />
+    <Compile Include="View\Pages\AccessoryListPage.xaml.cs">
+      <DependentUpon>AccessoryListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\CustomerPage.xaml.cs">
       <DependentUpon>CustomerPage.xaml</DependentUpon>
     </Compile>
@@ -81,6 +84,12 @@
     </Compile>
     <Compile Include="View\Pages\MasterPage.xaml.cs">
       <DependentUpon>MasterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\MaterialListPage.xaml.cs">
+      <DependentUpon>MaterialListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\OrderListPage.xaml.cs">
+      <DependentUpon>OrderListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\AddOrderWindow.xaml.cs">
       <DependentUpon>AddOrderWindow.xaml</DependentUpon>
@@ -97,6 +106,10 @@
     <Compile Include="View\Windows\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\Pages\AccessoryListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\CustomerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -114,6 +127,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pages\MasterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\MaterialListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\OrderListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

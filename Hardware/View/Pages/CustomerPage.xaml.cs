@@ -1,7 +1,5 @@
-﻿using Hardware.Model;
+﻿using Hardware.AppData;
 using Hardware.View.Windows;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Controls;
 
 namespace Hardware.View.Pages
@@ -11,17 +9,31 @@ namespace Hardware.View.Pages
     /// </summary>
     public partial class CustomerPage : Page
     {
-        List<Order> orders = App.context.Order.ToList();
         public CustomerPage()
         {
             InitializeComponent();
-            OrdersLv.ItemsSource = orders;
+            FrameHelper.mainFrame = ListFrame;
         }
 
         private void AddBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             AddOrderWindow addOrderWindow = new AddOrderWindow();
             addOrderWindow.ShowDialog();
+        }
+
+        private void MaterialBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            ListFrame.Navigate(new View.Pages.MaterialListPage());
+        }
+
+        private void AccessoryBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            ListFrame.Navigate(new View.Pages.AccessoryListPage());
+        }
+
+        private void OrderBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            ListFrame.Navigate(new View.Pages.OrderListPage());
         }
     }
 }

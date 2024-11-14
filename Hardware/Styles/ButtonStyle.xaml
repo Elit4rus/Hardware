@@ -3,7 +3,7 @@
     <Style TargetType="Button">
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontFamily" Value="Tahoma"/>
-        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Padding" Value="4"/>
         <Setter Property="BorderBrush" Value="black"/>
         <Setter Property="Background" Value="#E41736"/>
         <Setter Property="Foreground" Value="White"/>

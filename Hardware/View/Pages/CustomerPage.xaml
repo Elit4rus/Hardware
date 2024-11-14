@@ -5,58 +5,32 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Hardware.View.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="464" d:DesignWidth="880"
+      d:DesignHeight="504" d:DesignWidth="880"
       Title="Страница заказчика">
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="10"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <ListView x:Name="OrdersLv">
-            <ListView.View>
-                <GridView>
-                    <!-- Создаем столбцы -->
-                    <GridViewColumn Header="Номер" DisplayMemberBinding="{Binding ID}"/>
-                    <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding DateStart, StringFormat=dd.MM.yyyy}"/>
-                    <GridViewColumn Header="Статус" DisplayMemberBinding="{Binding Status.Title}"/>
-                    <GridViewColumn Header="Сумма" DisplayMemberBinding="{Binding Price}"/>
-                    <GridViewColumn Header="Заказчик">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock>
-                                    <TextBlock.Text>
-                                        <!-- Коллекция привязок -->
-                                        <MultiBinding StringFormat="{}{0} {1} {2}">
-                                            <Binding Path="User.Surname"/>
-                                            <Binding Path="User.Name"/>
-                                            <Binding Path="User.Patronymic"/>
-                                        </MultiBinding>
-                                    </TextBlock.Text>
-                                </TextBlock>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Дата выполнения" DisplayMemberBinding="{Binding DateDue, StringFormat=dd.MM.yyyy}"/>
-                    <GridViewColumn Header="Менеджер">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock>
-                                    <TextBlock.Text>
-                                        <!-- Коллекция привязок -->
-                                        <MultiBinding StringFormat="{}{0} {1} {2}">
-                                            <Binding Path="User1.Surname"/>
-                                            <Binding Path="User1.Name"/>
-                                            <Binding Path="User1.Patronymic"/>
-                                        </MultiBinding>
-                                    </TextBlock.Text>
-                                </TextBlock>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button Name="AddBtn" Grid.Row="2" Content="Добавить заказ" Width="170" Click="AddBtn_Click"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="MaterialBtn" Content="Материалы" Width="150" Height="40" Click="MaterialBtn_Click"/>
+            <Button x:Name="AccessoryBtn" Grid.Column="1" Content="Фурнитура" Width="150" Height="40" Click="AccessoryBtn_Click"/>
+            <Button x:Name="OrderBtn" Grid.Column="2" Content="Заказы" Width="150" Height="40" Click="OrderBtn_Click"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Button Name="AddBtn" Grid.Row="2" Content="Добавить заказ" Width="170" Click="AddBtn_Click"/>
+            <Frame x:Name="ListFrame" NavigationUIVisibility="Hidden"/>
+        </Grid>
     </Grid>
 </Page>

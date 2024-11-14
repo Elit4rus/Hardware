@@ -22,26 +22,6 @@ namespace Hardware.AppData
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
                     FrameHelper.mainFrame.Navigate(new View.Pages.CustomerPage());
-                    // Загружаем страницы
-                    //switch (App.currentUser.RoleID)
-                    //{
-                    //    case 1:
-                    //        // загрузка страницы
-                    //        FrameHelper.mainFrame.Navigate(new View.Pages.ManagerPage());
-                    //        break;
-                    //    case 2:
-                    //        FrameHelper.mainFrame.Navigate(new View.Pages.DeputyDirectorPage());
-                    //        break;
-                    //    case 3:
-                    //        FrameHelper.mainFrame.Navigate(new View.Pages.CustomerPage());
-                    //        break;
-                    //    case 4:
-                    //        FrameHelper.mainFrame.Navigate(new View.Pages.DirectorPage());
-                    //        break;
-                    //    case 5:
-                    //        FrameHelper.mainFrame.Navigate(new View.Pages.MasterPage());
-                    //        break;
-                    //}
                     return true;
                 }
                 // Иначе, то...
